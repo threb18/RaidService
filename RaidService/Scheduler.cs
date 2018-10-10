@@ -12,7 +12,7 @@ namespace RaidService
 {
     public partial class RaidService : ServiceBase
     {
-        private bool Logout = false;
+        private bool Logout = Constants.Logging;
 
         public RaidService()
         {
@@ -24,18 +24,18 @@ namespace RaidService
 
         public void OnTimer(object sender, System.Timers.ElapsedEventArgs args)
         {
-            if (Logout) Deltabyte.Info.Logger.log(this, "timer fired...");
-            if (raid != null) raid.Refresh();
+            if (Logout) Deltabyte.Info.Logger.log(this, string.Format("timer fired...[{0}]", (raid != null) ? raid.IsLocked.ToString() : string.Empty));
+            if ((raid != null) && (!raid.IsLocked)) raid.Refresh();
             if (Logout) Deltabyte.Info.Logger.log(this, "timer finished");
         }
 
         protected override void OnStart(string[] args)
         {
-            Deltabyte.Info.Logger.log(this, "service start");
+            Deltabyte.Info.Logger.log(this, string.Format("start {0} [{1}]", AppDomain.CurrentDomain.FriendlyName, System.Reflection.Assembly.GetEntryAssembly().GetName().Version));
             raid = new Raid();
             Deltabyte.Info.Logger.log(this, "raid opened");
             Periodic = new System.Timers.Timer();
-            Periodic.Interval = 5000;
+            Periodic.Interval = 10000;
             Periodic.Elapsed += new System.Timers.ElapsedEventHandler(this.OnTimer);
             Periodic.Start();
             Deltabyte.Info.Logger.log(this, "timer started");
