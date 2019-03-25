@@ -7,6 +7,9 @@ using MySql.Data.MySqlClient;
 using Deltabyte.Info;
 using Deltabyte.Info.Extent;
 
+/// <summary>
+/// raid data objects
+/// </summary>
 namespace RaidService
 {
     public class Location : IComparable<Location>
@@ -63,6 +66,12 @@ namespace RaidService
         #endregion
 
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator ==(Location e1, Location e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -77,11 +86,23 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator !=(Location e1, Location e2)
         {
             return !(e1 == e2);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >(Location e1, Location e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -96,6 +117,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <(Location e1, Location e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -110,6 +137,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <=(Location e1, Location e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -124,6 +157,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >=(Location e1, Location e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -138,6 +177,11 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public bool Equals(Location d)
         {
             if (ReferenceEquals(null, d)) return false;
@@ -151,6 +195,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -158,6 +207,10 @@ namespace RaidService
             return obj.GetType() == GetType() && Equals((Location)obj);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             unchecked
@@ -172,6 +225,11 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="l"></param>
+        /// <returns></returns>
         public bool Equal(Location l)
         {
             if (IsSet != l.IsSet) return false;
@@ -183,6 +241,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="l"></param>
+        /// <returns></returns>
         public bool NotEqual(Location l)
         {
             if (IsSet != l.IsSet) return true;
@@ -194,6 +257,11 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="l"></param>
+        /// <returns></returns>
         public int CompareTo(Location l)
         {
             if (l == null) return 1;
@@ -223,7 +291,7 @@ namespace RaidService
         #endregion
     }
 
-    public class DiskData : IDisposable, IComparable<DiskData>
+    public class DiskData : IDisposable, IEquatable<DiskData>, IComparable<DiskData>
     {
         #region Properties
         public int Id { get; set; }
@@ -297,6 +365,12 @@ namespace RaidService
         #endregion
 
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator ==(DiskData e1, DiskData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -319,11 +393,23 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator !=(DiskData e1, DiskData e2)
         {
             return !(e1 == e2);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >(DiskData e1, DiskData e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -346,6 +432,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <(DiskData e1, DiskData e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -368,6 +460,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <=(DiskData e1, DiskData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -390,6 +488,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >=(DiskData e1, DiskData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -412,6 +516,11 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public bool Equals(DiskData d)
         {
             if (ReferenceEquals(null, d)) return false;
@@ -433,6 +542,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -440,6 +554,10 @@ namespace RaidService
             return obj.GetType() == GetType() && Equals((DiskData)obj);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             unchecked
@@ -463,12 +581,17 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public int CompareTo(DiskData d)
         {
             if (d == null) return -1;
-            int res = Id.CompareTo(d.Id);
+            int res = Number.CompareTo(d.Number);
+            if (res == 0) res = Id.CompareTo(d.Id);
             if (res == 0) res = Index.CompareTo(d.Index);
-            if (res == 0) res = Number.CompareTo(d.Number);
             if (res == 0) res = Size.CompareTo(d.Size);
             if (res == 0) res = Temp.CompareTo(d.Temp);
             if (res == 0) res = Vendor.CompareTo(d.Vendor);
@@ -483,6 +606,11 @@ namespace RaidService
             return res;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public bool Equal(DiskData d)
         {
             if (Id != d.Id) return false;
@@ -503,6 +631,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public bool NotEqual(DiskData d)
         {
             if (Id != d.Id) return true;
@@ -523,6 +656,10 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<string> Info()
         {
             List<string> sl = new List<string>();
@@ -543,9 +680,13 @@ namespace RaidService
             return sl;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("{0,2} {1,2} {2,-12} {3,-16} {4,-12} {5,3} {6}", Id, Number, Model, Serial, Status, Temperature, Location);
+            return string.Format("{0,2} {1,2} {2,2} {3,-12} {4,-16} {5,-12} {6,3} {7}", Id, Index, Number, Model, Serial, Status, Temperature, Location);
         }
         #endregion
 
@@ -671,6 +812,12 @@ namespace RaidService
         #endregion
 
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator ==(VolumeData e1, VolumeData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -689,11 +836,23 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator !=(VolumeData e1, VolumeData e2)
         {
             return !(e1 == e2);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >(VolumeData e1, VolumeData e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -719,6 +878,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <(VolumeData e1, VolumeData e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -744,6 +909,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <=(VolumeData e1, VolumeData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -773,6 +944,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >=(VolumeData e1, VolumeData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -802,6 +979,11 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public bool Equals(VolumeData d)
         {
             if (ReferenceEquals(null, d)) return false;
@@ -819,6 +1001,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -826,6 +1013,10 @@ namespace RaidService
             return obj.GetType() == GetType() && Equals((VolumeData)obj);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             unchecked
@@ -844,6 +1035,11 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public int CompareTo(VolumeData d)
         {
             if (d == null) return -1;
@@ -866,6 +1062,10 @@ namespace RaidService
             }
             return res;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public void Clear()
         {
             Id = -1;
@@ -879,6 +1079,12 @@ namespace RaidService
             Task = string.Empty;
             if (Disks != null) Disks.Clear();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
         public bool Equal(VolumeData v)
         {
             if (Id != v.Id) return false;
@@ -897,6 +1103,12 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public bool Equal(VolumeData v, bool b)
         {
             if (Id != v.Id) return false;
@@ -917,6 +1129,12 @@ namespace RaidService
             }
             return true;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
         public bool NotEqual(VolumeData v)
         {
             if (Id != v.Id) return true;
@@ -935,6 +1153,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public bool NotEqual(VolumeData v, bool b)
         {
             if (Id != v.Id) return true;
@@ -956,6 +1180,10 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<string> Info()
         {
             List<string> sl = new List<string>();
@@ -975,11 +1203,20 @@ namespace RaidService
             return sl;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return string.Format("{0,2} {1} {2,-12} {3,12} {4} {5,-12}", Id, Level, Name, Size, Type, Status);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public string GetStatus(string s)
         {
             if (Level == Constants.VolumeTypePassthrough) return s;
@@ -988,6 +1225,10 @@ namespace RaidService
             return s;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private int missing()
         {
             int i = 0;
@@ -998,6 +1239,10 @@ namespace RaidService
             return i;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="o"></param>
         public void DiskStatus(List<DiskData> o)
         {
             if (Disks.Count == o.Count)
@@ -1020,6 +1265,11 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="o"></param>
         public void DiskStatus(List<DiskData> c, List<DiskData> o)
         {
             if (c.Count == o.Count)
@@ -1100,6 +1350,23 @@ namespace RaidService
             if (logging) Logger.log(this, "end");
         }
 
+        public ControllerData(bool b, bool d)
+        {
+            logging = d;
+            if (logging) Logger.log(this, "start");
+            DiskCount = 0;
+            Disks = 0;
+            if (b)
+            {
+                Load();
+            }
+            else
+            {
+                Init(true);
+            }
+            if (logging) Logger.log(this, "end");
+        }
+
         public void Dispose()
         {
             Vendor = null;
@@ -1119,6 +1386,12 @@ namespace RaidService
         #endregion
 
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator ==(ControllerData e1, ControllerData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -1138,11 +1411,23 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator !=(ControllerData e1, ControllerData e2)
         {
             return !(e1 == e2);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >(ControllerData e1, ControllerData e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -1165,7 +1450,12 @@ namespace RaidService
             }
             return false;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <(ControllerData e1, ControllerData e2)
         {
             if (ReferenceEquals(e1, e2)) return false;
@@ -1189,6 +1479,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator <=(ControllerData e1, ControllerData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -1216,6 +1512,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator >=(ControllerData e1, ControllerData e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -1243,6 +1545,11 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public bool Equals(ControllerData d)
         {
             if (ReferenceEquals(null, d)) return false;
@@ -1261,6 +1568,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -1268,6 +1580,10 @@ namespace RaidService
             return obj.GetType() == GetType() && Equals((ControllerData)obj);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string s = string.Empty;
@@ -1284,6 +1600,10 @@ namespace RaidService
             return s;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             unchecked
@@ -1303,6 +1623,11 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public int CompareTo(ControllerData d)
         {
             if (d == null) return -1;
@@ -1327,6 +1652,11 @@ namespace RaidService
             }
             return res;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="b"></param>
         private void Init(bool b)
         {
             Id = -1;
@@ -1340,6 +1670,9 @@ namespace RaidService
             if (b) Volumes = new List<VolumeData>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Clear()
         {
             if (Volumes != null)
@@ -1357,6 +1690,9 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void Load()
         {
             if (logging) Logger.log(this, "start");
@@ -1416,7 +1752,7 @@ namespace RaidService
                                 dsk.Serial = d.Serial.Val;
                                 dsk.Revision = d.Revision.Val;
                                 dsk.Status = d.State;
-                                dsk.Temperature = d.Temperature.Val.ToString();
+                                dsk.Temperature = (d.Temperature.Val == -1) ? "nn" : d.Temperature.Val.ToString();
                                 dsk.Measure = string.Empty;
                                 dsk.Ssd = (d.NonSpinning.Val == 1).ToString();
                                 dsk.Location = d.Location.Val;
@@ -1427,16 +1763,19 @@ namespace RaidService
                                 vol.Disks.Add(dsk);
                             }
                         }
-                        if (logging) Logger.log(this, "...done");
-                        //vol.Disks.Sort();
+                        if (logging) Logger.log(this, string.Format("...done. {0}/{1}", DiskCount, Disks));
+                        vol.Disks.Sort();
                         Volumes.Add(vol);
                     }
                 }
-                if (logging) Logger.log(this, "...done");
+                if (logging) Logger.log(this, string.Format("...done. {0}/{1}", DiskCount, Disks));
             }
             if (logging) Logger.log(this, "end");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Refresh()
         {
             try
@@ -1456,11 +1795,12 @@ namespace RaidService
                         }
                     }
                 }
+                Disks = 0;
                 Deltabyte.Raid.MergeDisk dsk = new Deltabyte.Raid.MergeDisk();
                 foreach (var vol in Volumes)
                 {
                     if (logging) Logger.log(this, string.Format("Refresh: {0}", vol.ToString()));
-                    Disks = 0;
+                    vol.Disks.Sort();
                     foreach (var d in vol.Disks)
                     {
                         if (d.Id > 0)
@@ -1481,6 +1821,11 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
         private string GetStatus(VolumeData v)
         {
             string s = Constants.VolumeStatusNormal;
@@ -1492,6 +1837,11 @@ namespace RaidService
             return s;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public bool Equal(ControllerData c)
         {
             if (Id != c.Id) return false;
@@ -1510,6 +1860,12 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public bool Equal(ControllerData c, bool b)
         {
             if (Id != c.Id) return false;
@@ -1531,6 +1887,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public bool NotEqual(ControllerData c)
         {
             if (Id != c.Id) return true;
@@ -1549,6 +1910,12 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public bool NotEqual(ControllerData c, bool b)
         {
             if (Id != c.Id) return true;
@@ -1570,6 +1937,10 @@ namespace RaidService
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<string> Info()
         {
             List<string> sl = new List<string>();
@@ -1659,6 +2030,21 @@ namespace RaidService
             if (Logout) Logger.log(this, "end");
         }
 
+        public Raid(bool b)
+        {
+            Logout = b;
+            if (Logout) Logger.log(this, "start");
+            Timer = 12;
+            Disks = 0;
+            Original = null;
+            _locked = false;
+            LastStatus = ControllerData.Overall();
+            if (Logout) Logger.log(this, "got status");
+            if (Logout) Logger.log(this, "load data");
+            Load();
+            if (Logout) Logger.log(this, "end");
+        }
+
         public Raid(Raid d)
         {
             Controller = d.Controller;
@@ -1669,6 +2055,7 @@ namespace RaidService
             Disks = d.Disks;
             _mail = d._mail;
             _locked = d._locked;
+            Logout = d.Logout;
         }
 
         public void Dispose()
@@ -1680,6 +2067,12 @@ namespace RaidService
         #endregion
 
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator ==(Raid e1, Raid e2)
         {
             if (ReferenceEquals(e1, e2)) return true;
@@ -1694,11 +2087,22 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e1"></param>
+        /// <param name="e2"></param>
+        /// <returns></returns>
         public static bool operator !=(Raid e1, Raid e2)
         {
             return !(e1 == e2);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public bool Equals(Raid d)
         {
             if (ReferenceEquals(null, d)) return false;
@@ -1712,6 +2116,11 @@ namespace RaidService
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -1719,6 +2128,10 @@ namespace RaidService
             return obj.GetType() == GetType() && Equals((Raid)obj);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string s = string.Empty;
@@ -1731,6 +2144,10 @@ namespace RaidService
             return s;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             unchecked
@@ -1746,6 +2163,11 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public int CompareTo(Raid d)
         {
             if (d == null) return -1;
@@ -1758,10 +2180,21 @@ namespace RaidService
             return res;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
+        /// <param name="o"></param>
+        /// <param name="c"></param>
         private void _statuslog(int i, int j, string o, string c)
         {
             Logger.log(this, string.Format("[{0},{1}] o:{2} / c:{3}", i, j, o, c));
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void _statuslog()
         {
             Logger.log(this, string.Format(""));
@@ -1780,17 +2213,13 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// Set proper disk status - missing, rebuilding, present
+        /// Areca API just provide status present
+        /// </summary>
         private void DiskStatus()
         {
             if (Original == null) return;
-            //if (Current.Volumes.Count == Original.Volumes.Count)
-            //{
-            //    for (int i = 0; i < Current.Volumes.Count; i++)
-            //    {
-            //        Current.Volumes[i].DiskStatus(Original.Volumes[i].Disks);
-            //        Current.Volumes[i].Status = Current.Volumes[i].GetStatus(Current.Volumes[i].Status);
-            //    }
-            //}
             if (Current.Volumes.Count == Original.Volumes.Count)
             {
                 for (int i = 0; i < Current.Volumes.Count; i++)
@@ -1812,17 +2241,34 @@ namespace RaidService
                             }
                         }
                     }
+                    else if (Current.Volumes[i].Status == Constants.VolumeStatusDegraded)
+                    {
+                        if (Current.Volumes[i].Disks.Count == Original.Volumes[i].Disks.Count)
+                        {
+                            for (int j = 0; j < Current.Volumes[i].Disks.Count; j++)
+                            {
+                                if ((Original.Volumes[i].Disks[j].Status == Constants.DiskStatusMissing) && (Current.Volumes[i].Disks[j].Status == Constants.DiskStatusNormal))
+                                {
+                                    Current.Volumes[i].Disks[j].Status = Constants.DiskStatusMissing;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
 
         public bool IsLocked { get { return _locked; } }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void Load()
         {
             _locked = true;
             try
             {
-                Current = new ControllerData(true);
+                Current = new ControllerData(true, Logout);
                 Disks = Current.Disks;
                 DiskStatus();
                 Save(true);
@@ -1839,6 +2285,9 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Refresh()
         {
             if (Logout) Logger.log(this, string.Format("start"));
@@ -1852,7 +2301,7 @@ namespace RaidService
                 {
                     Current.Clear();
                     Current.Dispose();
-                    Current = new ControllerData(true);
+                    Current = new ControllerData(true, Logout);
                     DiskStatus();
                     if (Disks > 0) SetMail();
                     Save(true);
@@ -1893,6 +2342,9 @@ namespace RaidService
             _locked = false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void SetMail()
         {
             if (Constants.Logging) Logger.log(this, "start");
@@ -1962,6 +2414,11 @@ namespace RaidService
             if (Constants.Logging) Logger.log(this, "end");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="t"></param>
         private void Send(Tuple<string, string, string> s, Types.EventType t)
         {
             if (Constants.Logging) Logger.log(this, "start");
@@ -1973,6 +2430,10 @@ namespace RaidService
             if (Constants.Logging) Logger.log(this, "end");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private int DiskNumber()
         {
             for (int i = 0; i < Original.Volumes.Count; i++)
@@ -1989,6 +2450,10 @@ namespace RaidService
             return 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="init"></param>
         private void Save(bool init)
         {
             using (Data dbms = new Data())
@@ -2008,7 +2473,9 @@ namespace RaidService
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void CopyTo()
         {
             if (Original == null) return;
@@ -2031,6 +2498,9 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void CopyFrom()
         {
             if (Current == null) return;
@@ -2053,16 +2523,30 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public bool Equal(Raid r)
         {
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public bool NotEqual(Raid r)
         {
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<string> Info()
         {
             List<string> sl = new List<string>();
@@ -2107,11 +2591,19 @@ namespace RaidService
         #endregion
 
         #region Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Boolean IsConnected()
         {
             return Connected;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private bool RefreshConnection()
         {
             try
@@ -2129,6 +2621,11 @@ namespace RaidService
             return Connected;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public List<Tuple<string, string>> SetController(ControllerData c)
         {
             Now = DateTime.Now;
@@ -2145,6 +2642,11 @@ namespace RaidService
             return vals;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
         public List<Tuple<string, string>> SetVolume(VolumeData v)
         {
             Now = DateTime.Now;
@@ -2163,6 +2665,11 @@ namespace RaidService
             return vals;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public List<Tuple<string, string>> SetDisk(DiskData d)
         {
             Now = DateTime.Now;
@@ -2188,6 +2695,13 @@ namespace RaidService
             return vals;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="v"></param>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public List<Tuple<string, string>> SetVolumeDisk(int i, int v, int d)
         {
             Now = DateTime.Now;
@@ -2200,6 +2714,11 @@ namespace RaidService
             return vals;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public List<Tuple<string, string>> RefreshController(ControllerData c)
         {
             Now = DateTime.Now;
@@ -2211,6 +2730,11 @@ namespace RaidService
             return vals;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
         public List<Tuple<string, string>> RefreshVolume(VolumeData v)
         {
             Now = DateTime.Now;
@@ -2223,6 +2747,11 @@ namespace RaidService
             return vals;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
         public List<Tuple<string, string>> RefreshDisk(DiskData d)
         {
             Now = DateTime.Now;
@@ -2234,6 +2763,10 @@ namespace RaidService
             return vals;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
         public void DeleteDB(string s)
         {
             if (Connected)
@@ -2259,6 +2792,10 @@ namespace RaidService
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
         public void SetDB(ControllerData c)
         {
             if (_logging) Logger.log(this, "start");
@@ -2304,6 +2841,10 @@ namespace RaidService
             if (_logging) Logger.log(this, "end");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="c"></param>
         public void RefreshDB(ControllerData c)
         {
             if (_logging) Logger.log(this, "start");

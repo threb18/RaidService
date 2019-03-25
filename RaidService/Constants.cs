@@ -22,7 +22,7 @@ namespace RaidService
         public static readonly int VolumeTypePassthrough = 20;
         public static readonly int VolumeTypeRaid5 = 8;
         public static readonly int VolumeTypeRaid6 = 9;
-        public static readonly bool Logging = true;
+        public static readonly bool Logging = false;
         public static readonly bool SendMail = true;
     }
 }

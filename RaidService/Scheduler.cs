@@ -22,6 +22,11 @@ namespace RaidService
         private Raid raid = null;
         private System.Timers.Timer Periodic = null;
 
+        /// <summary>
+        /// refresh raid data from areca api periodically
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnTimer(object sender, System.Timers.ElapsedEventArgs args)
         {
             if (Logout) Deltabyte.Info.Logger.log(this, string.Format("timer fired...[{0}]", (raid != null) ? raid.IsLocked.ToString() : string.Empty));
@@ -29,10 +34,15 @@ namespace RaidService
             if (Logout) Deltabyte.Info.Logger.log(this, "timer finished");
         }
 
+        /// <summary>
+        /// initialize service
+        /// </summary>
+        /// <param name="args">-D = debugging on</param>
         protected override void OnStart(string[] args)
         {
             Deltabyte.Info.Logger.log(this, string.Format("start {0} [{1}]", AppDomain.CurrentDomain.FriendlyName, System.Reflection.Assembly.GetEntryAssembly().GetName().Version));
-            raid = new Raid();
+            if (args.Length > 0 && args[0] == "-D") Logout = true; 
+            raid = new Raid(Logout);
             Deltabyte.Info.Logger.log(this, "raid opened");
             Periodic = new System.Timers.Timer();
             Periodic.Interval = 10000;
@@ -41,6 +51,9 @@ namespace RaidService
             Deltabyte.Info.Logger.log(this, "timer started");
         }
 
+        /// <summary>
+        /// finish service
+        /// </summary>
         protected override void OnStop()
         {
             raid.Dispose();
